@@ -24,20 +24,35 @@ const RegisterInputs: React.FC<IRegisterProps> = ({ handleSubmit, handleChange, 
         <MultiStep.Page pageIndex={1}>
           <Section>
             <Label htmlFor='email'>What's your email adress</Label>
-            <Input type='text' name='email' placeholder='email' onChange={handleChange} value={values.email} />
+            <Input
+              id='email'
+              type='text'
+              name='email'
+              placeholder='email'
+              onChange={handleChange}
+              value={values.email}
+            />
           </Section>
         </MultiStep.Page>
         <MultiStep.Page pageIndex={2}>
           <Section>
             <Label htmlFor='password'>What's your password</Label>
-            <Input type='text' name='password' placeholder='password' onChange={handleChange} value={values.password} />
+            <Input
+              id='password'
+              type='password'
+              name='password'
+              placeholder='password'
+              onChange={handleChange}
+              value={values.password}
+            />
           </Section>
         </MultiStep.Page>
         <MultiStep.Page pageIndex={3}>
           <Section>
             <Label htmlFor='passwordConfirm'>Confirm your password</Label>
             <Input
-              type='text'
+              id='passwordConfirmation'
+              type='password'
               name='passwordConfirmation'
               placeholder='confirm password'
               onChange={handleChange}

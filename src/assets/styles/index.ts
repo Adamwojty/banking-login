@@ -1,5 +1,6 @@
 export enum Colors {
   TEXT = "#FFFFFF",
+  TEXT_DARK = "#000000",
   BACKGROUND = "#E2E2E2",
   PROGRESSBAR = "#04CD24",
   BUTTON = "#04CD24",

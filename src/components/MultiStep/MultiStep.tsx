@@ -29,15 +29,20 @@ const Page: React.FC<IPageProps> = ({ children, pageIndex = 1 }) => {
 
   return currentPage === pageIndex ? children : null;
 };
-
-const Controls: React.FC<{}> = () => {
+interface IControls {
+  disabled?: boolean;
+}
+const Controls: React.FC<IControls> = ({ disabled }) => {
   const { changePage, currentPage, pageIndexes } = React.useContext(MultiStepContext);
   return (
     <ButtonWrapper>
       <Button type='button' disabled={currentPage === 1} onClick={() => changePage(currentPage - 1)}>
         Previous
       </Button>
-      <Button type='button' disabled={currentPage === pageIndexes.length} onClick={() => changePage(currentPage + 1)}>
+      <Button
+        type='button'
+        disabled={currentPage === pageIndexes.length || disabled}
+        onClick={() => changePage(currentPage + 1)}>
         Next
       </Button>
     </ButtonWrapper>
@@ -71,7 +76,7 @@ const Wrapper: React.FC<IWrapperProps> = ({ children }) => {
   );
 };
 const ProgressBarWrapper = styled.div`
-  margin-top: 20px;
+  margin: 20px 0px;
   width: 80%;
   height: 10px;
   background-color: ${Colors.BUTTON_PROGRESS};
